@@ -6,7 +6,7 @@ namespace SimpleEventMonitor.Client
 {
     public static class StartupExtensions
     {
-        public static IAppBuilder Configuration(this IAppBuilder app)
+        public static IAppBuilder ConfigureMonitor(this IAppBuilder app)
         {
             app.Map("/signalr", map =>
             {
