@@ -5,7 +5,6 @@ using Microsoft.Owin;
 using Owin;
 using SimpleEventMonitor.Client;
 
-[assembly: OwinStartup(typeof(SampleMonitor.Startup))]
 namespace SampleMonitor
 {
     public class Startup
