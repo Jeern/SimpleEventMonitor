@@ -6,10 +6,10 @@
 
 <h2>Simple Event Monitor</h2>
 
-<ul>
+<ul id="SEMLIST">
     @foreach (var simpleEvent in Model)
     {
-        <li>
+        <li class="SEMEventListItem">
             <div class="SEMEventName">
                 <b>Name:</b> @simpleEvent.Name
             </div>
@@ -22,4 +22,17 @@
         </li>
     }
 </ul>
+
+<script type="text/javascript">
+    var list = document.getElementById('SEMLIST');
+    var firstElement = list.childNodes[0];
+    var entry = document.createElement('li');
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode('Nums'));
+
+    entry.appendChild(div);
+    //entry.appendChild('<div>røv</div>');
+//    entry.insertBefore(document.createElement('<div>røv</div>'), firstElement);
+    list.insertBefore(entry, firstElement);
+</script>
 
