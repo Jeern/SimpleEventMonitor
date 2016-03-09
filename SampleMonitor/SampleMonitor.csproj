@@ -64,8 +64,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -172,6 +172,14 @@
     <ProjectReference Include="..\SimpleEventMonitor.Client\SimpleEventMonitor.Client.csproj">
       <Project>{23b05bc4-4181-4b2e-a2be-67c71e5bc435}</Project>
       <Name>SimpleEventMonitor.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Common.csproj">
+      <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
+      <Name>SimpleEventMonitor.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
+      <Project>{F4997918-C1D7-4217-A33F-CFAA273F8B6C}</Project>
+      <Name>SimpleEventMonitor.Store.Redis</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,18 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using System;
+using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
 using Owin;
+using SimpleEventMonitor.Common;
 
 namespace SimpleEventMonitor.Client
 {
     public static class StartupExtensions
     {
-        public static IAppBuilder ConfigureMonitor(this IAppBuilder app)
+        private static StoreAccess _storeAccess;
+        public static IAppBuilder ConfigureMonitor(this IAppBuilder app, Func<IEventDataStore> dataStoreCreator)
         {
+            _storeAccess = new StoreAccess(dataStoreCreator);
+
             app.Map("/signalr", map =>
             {
                 map.UseCors(CorsOptions.AllowAll);

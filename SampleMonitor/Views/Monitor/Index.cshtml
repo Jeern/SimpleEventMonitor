@@ -6,3 +6,20 @@
 
 <h2>Simple Event Monitor</h2>
 
+<ul>
+    @foreach (var simpleEvent in Model)
+    {
+        <li>
+            <div class="SEMEventName">
+                <b>Name:</b> @simpleEvent.Name
+            </div>
+            <div class="SEMEventTime">
+                <b>EventTime:</b> @simpleEvent.LocalTime
+            </div>
+            <div class="SEMEventContent">
+                <b>Content:</b> @simpleEvent.Content
+            </div>
+        </li>
+    }
+</ul>
+

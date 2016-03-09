@@ -4,6 +4,7 @@ using System.Web.Routing;
 using Microsoft.Owin;
 using Owin;
 using SimpleEventMonitor.Client;
+using SimpleEventMonitor.Store.Redis;
 
 namespace SampleMonitor
 {
@@ -16,7 +17,7 @@ namespace SampleMonitor
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            app.ConfigureMonitor();
+            app.ConfigureMonitor(() => new RedisEventDataStore());
         }
     }
 }

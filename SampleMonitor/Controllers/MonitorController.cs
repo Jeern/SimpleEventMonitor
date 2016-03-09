@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using SimpleEventMonitor.Store.Redis;
 
 namespace SampleMonitor.Controllers
 {
@@ -11,7 +8,8 @@ namespace SampleMonitor.Controllers
         // GET: Monitor
         public ActionResult Index()
         {
-            return View();
+            var eventDataStore = new RedisEventDataStore();
+            return View(eventDataStore.GetEvents());
         }
     }
 }
