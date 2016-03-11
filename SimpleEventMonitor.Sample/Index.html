@@ -3,43 +3,14 @@
 <head>
     <title>SimpleEventMonitor.Sample</title>
     <meta charset="utf-8" />
-    <!--<script src="/Scripts/jquery-2.2.1.min.js"></script>-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
     </script>
-
 </head>
 <body>
     <h1>Simple Event Monitor</h1>
 
     <ul id="SEMLIST">
-        <!--@foreach (var simpleEvent in Model)
-        {
-        <li class="SEMEventListItem">
-            <div class="SEMEventName">
-                <b>Name:</b> @simpleEvent.Name
-            </div>
-            <div class="SEMEventTime">
-                <b>EventTime:</b> @simpleEvent.LocalTime
-            </div>
-            <div class="SEMEventContent">
-                <b>Content:</b> @simpleEvent.Content
-            </div>
-        </li>
-        }-->
     </ul>
-
-    <!--<script type="text/javascript">
-        var list = document.getElementById('SEMLIST');
-        var firstElement = list.childNodes[0];
-        var entry = document.createElement('li');
-        var div = document.createElement('div');
-        div.appendChild(document.createTextNode('Nums'));
-
-        entry.appendChild(div);
-        //entry.appendChild('<div>røv</div>');
-    //    entry.insertBefore(document.createElement('<div>røv</div>'), firstElement);
-        list.insertBefore(entry, firstElement);
-        </script>-->
     <script type="text/javascript">
         $(document).ready(function () {
             $.ajax({
@@ -47,9 +18,7 @@
             }).then(function (data) {
                 var len = data.length;
                 for (var i = 0; i < len; i++) {
-
                     var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data[i].name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data[i].localTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data[i].content + '</div></li>';
-
                     $("#SEMLIST").append(listitem);
                 }
             });
