@@ -3,8 +3,8 @@
 <head>
     <title>SimpleEventMonitor.Sample</title>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
 </head>
 <body>
     <h1>Simple Event Monitor</h1>
@@ -13,6 +13,7 @@
     </ul>
     <script type="text/javascript">
         $(function () {
+            setupSignalR();
             $.ajax({
                 url: "/Events"
             }).then(function (data) {
@@ -25,6 +26,19 @@
             function addListItem(data) {
                 var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data.name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data.formattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data.content + '</div></li>';
                 $("#SEMLIST").append(listitem);
+            }
+
+            function setupSignalR() {
+                // Declare a proxy to reference the hub.
+                var connection = $.hubConnection('/signalr');
+                var eventHubProxy = connection.createHubProxy('eventHub');
+                eventHubProxy.on('publish', function (data) {
+                    addListItem(data);
+                });
+
+                connection.start().done(function () {
+                    eventHubProxy.invoke('subscribe', 'simpleEventMonitorEvents');
+                });
             }
         });
     </script>
