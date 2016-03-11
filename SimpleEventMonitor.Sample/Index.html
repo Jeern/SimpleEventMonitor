@@ -2,7 +2,11 @@
 <html>
 <head>
     <title>SimpleEventMonitor.Sample</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <!--<script src="/Scripts/jquery-2.2.1.min.js"></script>-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    </script>
+
 </head>
 <body>
     <h1>Simple Event Monitor</h1>
@@ -24,19 +28,30 @@
         }-->
     </ul>
 
+    <!--<script type="text/javascript">
+        var list = document.getElementById('SEMLIST');
+        var firstElement = list.childNodes[0];
+        var entry = document.createElement('li');
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode('Nums'));
+
+        entry.appendChild(div);
+        //entry.appendChild('<div>røv</div>');
+    //    entry.insertBefore(document.createElement('<div>røv</div>'), firstElement);
+        list.insertBefore(entry, firstElement);
+        </script>-->
     <script type="text/javascript">
-    var list = document.getElementById('SEMLIST');
-    var firstElement = list.childNodes[0];
-    var entry = document.createElement('li');
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode('Nums'));
-
-    entry.appendChild(div);
-    //entry.appendChild('<div>røv</div>');
-//    entry.insertBefore(document.createElement('<div>røv</div>'), firstElement);
-    list.insertBefore(entry, firstElement);
+        $(document).ready(function () {
+            alert("hej");
+            $.ajax({
+                url: "/Events"
+            }).then(function (data) {
+                alert("hej");
+                //$('.greeting-id').append(data.id);
+                //$('.greeting-content').append(data.content);
+            });
+        });
     </script>
-
 
 </body>
 </html>
