@@ -12,16 +12,20 @@
     <ul id="SEMLIST">
     </ul>
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(function () {
             $.ajax({
                 url: "/Events"
             }).then(function (data) {
                 var len = data.length;
                 for (var i = 0; i < len; i++) {
-                    var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data[i].name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data[i].formattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data[i].content + '</div></li>';
-                    $("#SEMLIST").append(listitem);
+                    addListItem(data[i]);
                 }
             });
+
+            function addListItem(data) {
+                var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data.name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data.formattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data.content + '</div></li>';
+                $("#SEMLIST").append(listitem);
+            }
         });
     </script>
 
