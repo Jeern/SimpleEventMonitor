@@ -18,7 +18,7 @@
             }).then(function (data) {
                 var len = data.length;
                 for (var i = 0; i < len; i++) {
-                    var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data[i].name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data[i].localTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data[i].content + '</div></li>';
+                    var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data[i].name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data[i].formattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data[i].content + '</div></li>';
                     $("#SEMLIST").append(listitem);
                 }
             });

@@ -10,6 +10,8 @@ namespace SimpleEventMonitor.Common
 
         public DateTime LocalTime => UtcTime.ToLocalTime();
 
+        public string FormattedLocalTime => $"{LocalTime.ToLongDateString()} {LocalTime.ToLongTimeString()}.{LocalTime.ToString("fff")}";
+
         public DateTime UtcTime { get; set; }
         public object SystemEvent { get; set; }
         public string Content => JsonConvert.SerializeObject(SystemEvent);
