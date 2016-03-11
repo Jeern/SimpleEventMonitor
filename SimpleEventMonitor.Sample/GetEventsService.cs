@@ -9,8 +9,7 @@ namespace SimpleEventMonitor.Sample
     {
         public IEnumerable<SimpleEvent> Get(GetEventsRequest request)
         {
-            var eventDataStore = new RedisEventDataStore();
-            return eventDataStore.GetEvents();
+            return RedisEventDataStore.Current.GetEvents();
         }
     }
 }
