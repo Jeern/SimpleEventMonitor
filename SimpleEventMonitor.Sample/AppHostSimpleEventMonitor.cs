@@ -18,7 +18,7 @@ namespace SimpleEventMonitor.Sample
         {
             //JsConfig.AlwaysUseUtc = true;
             //JsConfig.DateHandler = JsonDateHandler.ISO8601;
-            JsConfig.EmitCamelCaseNames = true;
+            //JsConfig.EmitCamelCaseNames = true;
             JsConfig.IncludeNullValues = true;
 
             SetConfig(
