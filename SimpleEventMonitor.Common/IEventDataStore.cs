@@ -7,7 +7,5 @@ namespace SimpleEventMonitor.Common
     {
         void Persist(object evt);
         IEnumerable<SimpleEvent> GetEvents();
-
-        event EventHandler<SimpleEventEventArgs> SimpleEventHappened;
     }
 }
