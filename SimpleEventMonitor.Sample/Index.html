@@ -25,18 +25,13 @@
 
             function addListItem(data) {
                 var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data.Name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data.Content + '</div></li>';
-                $("#SEMLIST").append(listitem);
+                $("#SEMLIST").prepend(listitem);
             }
 
             function setupSignalR() {
                 var connection = $.hubConnection('/signalr');
                 var eventHubProxy = connection.createHubProxy('eventHub');
                 eventHubProxy.on('publish', function (data) {
-                    for (var key in data) {
-                        if (data.hasOwnProperty(key)) {
-                            alert(key + " -> " + data[key]);
-                        }
-                    }
                     addListItem(data);
                 });
                 connection.start().done(function () {

@@ -10,7 +10,9 @@ namespace SimpleEventMonitor.Sample
     {
         public IEnumerable<SimpleEvent> Get(GetEventsRequest request)
         {
-            return RedisEventDataStore.Current.GetEvents().OrderByDescending(evt => evt.UtcTime);
+            //ListItems are shown in descending order, but this is assured by using prepend instead of append in Jquery
+            //That is why this ordered ascending
+            return RedisEventDataStore.Current.GetEvents().OrderBy(evt => evt.UtcTime);
         }
     }
 }
