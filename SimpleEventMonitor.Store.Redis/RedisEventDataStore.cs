@@ -6,6 +6,11 @@ namespace SimpleEventMonitor.Store.Redis
 {
     public class RedisEventDataStore : EventDataStoreBase
     {
+        public RedisEventDataStore(string hubBaseUrl) : base(hubBaseUrl)
+        {
+            
+        }
+
         protected override void Persist(SimpleEvent evt)
         {
         }

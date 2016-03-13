@@ -11,7 +11,7 @@ namespace SimpleEventMonitor.Sample.Sender
             Console.WriteLine("Sending events...");
             var rnd = new Random();
 
-            var redisEventDataStore = new RedisEventDataStore();
+            var redisEventDataStore = new RedisEventDataStore("http://localhost:2419");
 
             while (true)
             {

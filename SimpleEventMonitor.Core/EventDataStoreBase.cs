@@ -6,17 +6,18 @@ namespace SimpleEventMonitor.Core
 {
     public abstract class EventDataStoreBase : IEventDataStore
     {
-        private HubConnection _connection;
+        protected EventDataStoreBase(string hubBaseUrl)
+        {
+            _connection = new HubConnection(hubBaseUrl);
+        }
+
+        private readonly HubConnection _connection;
 
         private IHubProxy _eventHub;
         private IHubProxy EventHub
         {
             get
             {
-                if (_connection == null)
-                {
-                    _connection = new HubConnection("http://localhost:2419");
-                }
                 if (_connection.State == ConnectionState.Connecting || _connection.State == ConnectionState.Reconnecting)
                     return null; //Det virker nok, men ikke lige nu
 

@@ -9,7 +9,7 @@ namespace SimpleEventMonitor.Sample
     {
         public void Configuration(IAppBuilder app)
         {
-            app.ConfigureMonitor(new RedisEventDataStore());
+            app.ConfigureMonitor(new RedisEventDataStore("http://localhost:2419"));
         }
     }
 }
