@@ -2,7 +2,7 @@
 using ServiceStack.ServiceHost;
 using SimpleEventMonitor.Core;
 
-namespace SimpleEventMonitor.Sample
+namespace SimpleEventMonitor.Web
 {
     [Route("/Events", "GET")]
     public class GetEventsRequest : IReturn<IEnumerable<SimpleEvent>>
