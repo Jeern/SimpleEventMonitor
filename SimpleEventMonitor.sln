@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Store.Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Sample", "SimpleEventMonitor.Sample\SimpleEventMonitor.Sample.csproj", "{C0C24262-ABD6-4984-A82A-DA576DA069C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.SampleSender", "SimpleEventMonitor.SampleSender\SimpleEventMonitor.SampleSender.csproj", "{8D9E9A43-3DB2-4052-BFDF-E70EE47F2F1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Sample.Sender", "SimpleEventMonitor.SampleSender\SimpleEventMonitor.Sample.Sender.csproj", "{8D9E9A43-3DB2-4052-BFDF-E70EE47F2F1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Core", "SimpleEventMonitor.Core\SimpleEventMonitor.Core.csproj", "{6D5244CE-8059-420F-A720-669FC997A455}"
 EndProject
