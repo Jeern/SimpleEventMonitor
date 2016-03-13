@@ -16,9 +16,13 @@ namespace SimpleEventMonitor.Web
 
         public IEnumerable<SimpleEvent> Get(GetEventsRequest request)
         {
+            if (request.StartIdx == 0 && request.EndIdx == 0)
+            {
+                request.EndIdx = int.MaxValue;
+            }
             //ListItems are shown in descending order, but this is assured by using prepend instead of append in Jquery
             //That is why this ordered ascending
-            return _dataStore.GetEvents().OrderBy(evt => evt.UtcTime);
+            return _dataStore.GetEvents(request.StartIdx, request.EndIdx).OrderBy(evt => evt.UtcTime);
         }
     }
 }
