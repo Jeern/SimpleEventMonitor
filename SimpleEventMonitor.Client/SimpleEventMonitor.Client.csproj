@@ -124,10 +124,6 @@
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
       <Name>SimpleEventMonitor.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleEventMonitor.Server\SimpleEventMonitor.Server.csproj">
-      <Project>{c7ced39a-9a53-4dfe-a0b7-ba0556b62064}</Project>
-      <Name>SimpleEventMonitor.Server</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
       <Project>{f4997918-c1d7-4217-a33f-cfaa273f8b6c}</Project>
       <Name>SimpleEventMonitor.Store.Redis</Name>
