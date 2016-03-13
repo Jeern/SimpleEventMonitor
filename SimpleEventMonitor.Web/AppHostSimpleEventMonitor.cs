@@ -13,7 +13,7 @@ namespace SimpleEventMonitor.Web
         public AppHostSimpleEventMonitor(IEventDataStore dataStore)
             : base("SimpleEventMonitorServices", Assembly.GetExecutingAssembly())
         {
-            Container.Register(dataStore);
+            Container.Register(dataStore); 
         }
 
         public override void Configure(Container container)
