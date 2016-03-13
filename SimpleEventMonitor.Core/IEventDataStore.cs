@@ -7,10 +7,10 @@ namespace SimpleEventMonitor.Core
     {
         void Publish(object evt);
         void PersistAndPublish(object evt);
-        IEnumerable<SimpleEvent> GetEvents(long startIdx = 0, long endIdx = long.MaxValue);
+        IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue);
         /// <summary>
         /// For paging when I get around to it
         /// </summary>
-        long TotalCount { get; }
+        int TotalCount { get; }
     }
 }

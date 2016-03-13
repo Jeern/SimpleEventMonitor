@@ -12,13 +12,13 @@ namespace SimpleEventMonitor.Store.Redis
             RedisDB.Initialize(redisHost, redisPort, database, redisPassword);
         }
 
-        public override IEnumerable<SimpleEvent> GetEvents(long startIdx = 0, long endIdx = long.MaxValue)
+        public override IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue)
         {
             var redisValues = RedisDB.Database.ListRange(Key, startIdx, endIdx);
             return redisValues.Select(redisValue => JsonConvert.DeserializeObject<SimpleEvent>(redisValue));
         }
 
-        public override long TotalCount => 0;
+        public override int TotalCount => 0;
 
         private const string Key = "SimpleEventMonitor.EventList";
 

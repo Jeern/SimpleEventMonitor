@@ -7,7 +7,7 @@ namespace SimpleEventMonitor.Web
     [Route("/Events", "GET")]
     public class GetEventsRequest : IReturn<IEnumerable<SimpleEvent>>
     {
-        public long StartIdx { get; set; }
-        public long EndIdx { get; set; }
+        public int StartIdx { get; set; }
+        public int EndIdx { get; set; }
     }
 }

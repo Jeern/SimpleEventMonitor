@@ -18,7 +18,7 @@ namespace SimpleEventMonitor.Web
         {
             if (request.StartIdx == 0 && request.EndIdx == 0)
             {
-                request.EndIdx = long.MaxValue;
+                request.EndIdx = int.MaxValue;
             }
             //ListItems are shown in descending order, but this is assured by using prepend instead of append in Jquery
             //That is why this ordered ascending
