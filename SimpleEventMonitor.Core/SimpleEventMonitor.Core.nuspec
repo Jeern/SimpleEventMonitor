@@ -12,13 +12,13 @@
 		<id>$id$</id>
 		<!-- This will use the AssemblyVersion -->
 		<version>$version$</version>
-		<title>Your title goes here</title>
-		<description>Your description goes here</description>
-		<authors>You</authors>
-		<owners>You</owners>
+		<title>SimpleEventMonitor.Core</title>
+		<description>Core functionality for SimpleEventMonitor</description>
+		<authors>Jesper Niedermann</authors>
+		<owners>Jesper Niedermann</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<releaseNotes>Initial release.</releaseNotes>
-		<copyright>Copyright 2015</copyright>
-		<tags>ANY</tags>
+		<copyright>Copyright 2016</copyright>
+		<tags>Event Monitor Log</tags>
 	</metadata>
 </package>
