@@ -59,8 +59,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Core.csproj">
-      <Project>{6D5244CE-8059-420F-A720-669FC997A455}</Project>
+    <ProjectReference Include="..\SimpleEventMonitor.Core\SimpleEventMonitor.Core.csproj">
+      <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
       <Name>SimpleEventMonitor.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
