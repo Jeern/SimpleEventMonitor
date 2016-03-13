@@ -8,10 +8,13 @@ namespace SimpleEventMonitor.Web
 {
     public static class StartupExtensions
     {
-        private static StoreAccess _storeAccess;
-        public static IAppBuilder ConfigureMonitor(this IAppBuilder app, Func<IEventDataStore> dataStoreCreator)
+        private static AppHostSimpleEventMonitor _appHost;
+
+        public static IAppBuilder ConfigureMonitor(this IAppBuilder app, IEventDataStore dataStore)
         {
-            _storeAccess = new StoreAccess(dataStoreCreator);
+            _appHost = new AppHostSimpleEventMonitor(dataStore);
+            _appHost.Init();
+
 
             app.Map("/signalr", map =>
             {

@@ -6,9 +6,6 @@ namespace SimpleEventMonitor.Store.Redis
 {
     public class RedisEventDataStore : EventDataStoreBase
     {
-        private static RedisEventDataStore _current;
-        public static RedisEventDataStore Current => _current ?? (_current = new RedisEventDataStore());
-
         protected override void Persist(SimpleEvent evt)
         {
         }
