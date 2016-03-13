@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
 using SimpleEventMonitor.Core;
 
 namespace SimpleEventMonitor.Store.Redis
@@ -11,29 +12,19 @@ namespace SimpleEventMonitor.Store.Redis
             RedisDB.Initialize(redisHost, redisPort, database, redisPassword);
         }
 
-        public override IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue)
+        public override IEnumerable<SimpleEvent> GetEvents(long startIdx = 0, long endIdx = long.MaxValue)
         {
-            yield return new SimpleEvent(new SomeEvent());
-            yield return new SimpleEvent(new SomeEvent());
-            yield return new SimpleEvent(new SomeEvent());
+            var redisValues = RedisDB.Database.ListRange(Key, startIdx, endIdx);
+            return redisValues.Select(redisValue => JsonConvert.DeserializeObject<SimpleEvent>(redisValue));
         }
 
-        public override int TotalCount => 0;
+        public override long TotalCount => 0;
+
+        private const string Key = "SimpleEventMonitor.EventList";
 
         protected override void Persist(SimpleEvent evt)
         {
+            RedisDB.Database.ListLeftPush(Key, JsonConvert.SerializeObject(evt));
         }
-    }
-
-    public class SomeEvent
-    {
-        public SomeEvent()
-        {
-            Id = Guid.NewGuid();
-            HappenedAt = DateTime.UtcNow;
-        }
-
-        public Guid Id { get; set; }
-        public DateTime HappenedAt { get; set; }
     }
 }
