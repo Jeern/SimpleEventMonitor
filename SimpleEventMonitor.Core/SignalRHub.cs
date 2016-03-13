@@ -13,7 +13,7 @@ namespace SimpleEventMonitor.Core
 
         public void Publish(SimpleEvent evt)
         {
-            Clients.Group("SEM.simpleEventMonitorEvents").publish(evt);
+            Clients.Group("simpleEventMonitorEvents").publish(evt);
         }
     }
 }

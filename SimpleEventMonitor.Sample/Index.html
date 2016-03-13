@@ -35,7 +35,7 @@
                     addListItem(data);
                 });
                 connection.start().done(function () {
-                    eventHubProxy.invoke('subscribe', 'SEM.simpleEventMonitorEvents');
+                    eventHubProxy.invoke('subscribe', 'simpleEventMonitorEvents');
                 });
             }
         });
