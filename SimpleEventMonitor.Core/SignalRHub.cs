@@ -6,7 +6,6 @@ namespace SimpleEventMonitor.Core
     [HubName("EventHub")]
     public class SignalRHub : Hub
     {
-
         public void Subscribe(string groupId)
         {
             Groups.Add(Context.ConnectionId, groupId);
@@ -14,7 +13,7 @@ namespace SimpleEventMonitor.Core
 
         public void Publish(SimpleEvent evt)
         {
-            Clients.Group("simpleEventMonitorEvents").publish(evt);
+            Clients.Group("SEM.simpleEventMonitorEvents").publish(evt);
         }
     }
 }
