@@ -6,15 +6,9 @@ namespace SimpleEventMonitor.Store.Redis
 {
     public class RedisEventDataStore : EventDataStoreBase
     {
-        private readonly string _redisHost;
-        private readonly int _redisPort;
-        private readonly string _redisPassword;
-
-        public RedisEventDataStore(string hubBaseUrl, string redisHost, int redisPort, string redisPassword = "") : base(hubBaseUrl)
+        public RedisEventDataStore(string hubBaseUrl, string redisHost, int redisPort, int database = 0, string redisPassword = "") : base(hubBaseUrl)
         {
-            _redisHost = redisHost;
-            _redisPort = redisPort;
-            _redisPassword = redisPassword;
+            RedisDB.Initialize(redisHost, redisPort, database, redisPassword);
         }
 
         public override IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue)
