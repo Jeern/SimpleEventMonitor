@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleEventMonitor.Common
+namespace SimpleEventMonitor.Core
 {
     public class StoreAccess
     {

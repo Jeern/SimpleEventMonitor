@@ -140,9 +140,9 @@
       <Project>{23B05BC4-4181-4B2E-A2BE-67C71E5BC435}</Project>
       <Name>SimpleEventMonitor.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Common.csproj">
+    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Core.csproj">
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
-      <Name>SimpleEventMonitor.Common</Name>
+      <Name>SimpleEventMonitor.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
       <Project>{F4997918-C1D7-4217-A33F-CFAA273F8B6C}</Project>

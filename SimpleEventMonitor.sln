@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Client", "SimpleEventMonitor.Client\SimpleEventMonitor.Client.csproj", "{23B05BC4-4181-4B2E-A2BE-67C71E5BC435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Common", "SimpleEventMonitor.Common\SimpleEventMonitor.Common.csproj", "{6D5244CE-8059-420F-A720-669FC997A455}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEventMonitor.Core", "SimpleEventMonitor.Common\SimpleEventMonitor.Core.csproj", "{6D5244CE-8059-420F-A720-669FC997A455}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonItems", "CommonItems", "{1B5E8D10-2BF7-43F3-9299-E93E43B62327}"
 	ProjectSection(SolutionItems) = preProject

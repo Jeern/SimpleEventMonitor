@@ -7,8 +7,8 @@
     <ProjectGuid>{6D5244CE-8059-420F-A720-669FC997A455}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleEventMonitor.Common</RootNamespace>
-    <AssemblyName>SimpleEventMonitor.Common</AssemblyName>
+    <RootNamespace>SimpleEventMonitor.Core</RootNamespace>
+    <AssemblyName>SimpleEventMonitor.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -81,7 +81,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleEvent.cs" />
     <Compile Include="EventDataStoreBase.cs" />
-    <Compile Include="SimpleEventEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

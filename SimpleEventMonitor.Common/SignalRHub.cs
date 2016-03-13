@@ -1,9 +1,7 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR;
+﻿using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SimpleEventMonitor.Common
+namespace SimpleEventMonitor.Core
 {
     [HubName("EventHub")]
     public class SignalRHub : Hub

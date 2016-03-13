@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNet.SignalR.Client;
 
-namespace SimpleEventMonitor.Common
+namespace SimpleEventMonitor.Core
 {
     public abstract class EventDataStoreBase : IEventDataStore
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace SimpleEventMonitor.Common
+namespace SimpleEventMonitor.Core
 {
     public interface IEventDataStore
     {

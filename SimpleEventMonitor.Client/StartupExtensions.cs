@@ -2,7 +2,7 @@
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
 using Owin;
-using SimpleEventMonitor.Common;
+using SimpleEventMonitor.Core;
 
 namespace SimpleEventMonitor.Client
 {

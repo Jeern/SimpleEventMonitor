@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using SimpleEventMonitor.Common;
+using SimpleEventMonitor.Core;
 
 namespace SimpleEventMonitor.Store.Redis
 {

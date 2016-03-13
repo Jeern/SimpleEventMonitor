@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ServiceStack.ServiceInterface;
-using SimpleEventMonitor.Common;
+using SimpleEventMonitor.Core;
 using SimpleEventMonitor.Store.Redis;
 
 namespace SimpleEventMonitor.Sample

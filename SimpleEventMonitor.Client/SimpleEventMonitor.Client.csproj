@@ -119,9 +119,9 @@
     <Compile Include="StartupExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Common.csproj">
+    <ProjectReference Include="..\SimpleEventMonitor.Common\SimpleEventMonitor.Core.csproj">
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
-      <Name>SimpleEventMonitor.Common</Name>
+      <Name>SimpleEventMonitor.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
       <Project>{f4997918-c1d7-4217-a33f-cfaa273f8b6c}</Project>
