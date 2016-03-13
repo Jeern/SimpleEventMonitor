@@ -136,10 +136,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleEventMonitor.Client\SimpleEventMonitor.Web.csproj">
-      <Project>{23B05BC4-4181-4B2E-A2BE-67C71E5BC435}</Project>
-      <Name>SimpleEventMonitor.Web</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Core\SimpleEventMonitor.Core.csproj">
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
       <Name>SimpleEventMonitor.Core</Name>
@@ -147,6 +143,10 @@
     <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
       <Project>{F4997918-C1D7-4217-A33F-CFAA273F8B6C}</Project>
       <Name>SimpleEventMonitor.Store.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleEventMonitor.Web\SimpleEventMonitor.Web.csproj">
+      <Project>{23b05bc4-4181-4b2e-a2be-67c71e5bc435}</Project>
+      <Name>SimpleEventMonitor.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
