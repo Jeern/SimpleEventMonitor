@@ -16,7 +16,7 @@ namespace SimpleEventMonitor.Sample.Sender
             while (true)
             {
                 Thread.Sleep(rnd.Next(0, 3000));
-                redisEventDataStore.Persist(new SomeEvent());
+                redisEventDataStore.PersistAndPublish(new SomeEvent());
             }
         }
     }
