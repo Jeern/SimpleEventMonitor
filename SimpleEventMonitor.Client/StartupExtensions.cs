@@ -4,7 +4,7 @@ using Microsoft.Owin.Cors;
 using Owin;
 using SimpleEventMonitor.Core;
 
-namespace SimpleEventMonitor.Client
+namespace SimpleEventMonitor.Web
 {
     public static class StartupExtensions
     {

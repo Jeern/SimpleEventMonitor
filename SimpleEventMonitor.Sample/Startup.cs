@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Owin;
-using SimpleEventMonitor.Client;
+using SimpleEventMonitor.Web;
 using SimpleEventMonitor.Store.Redis;
 
 namespace SimpleEventMonitor.Sample

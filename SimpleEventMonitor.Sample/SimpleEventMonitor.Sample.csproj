@@ -136,9 +136,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleEventMonitor.Client\SimpleEventMonitor.Client.csproj">
+    <ProjectReference Include="..\SimpleEventMonitor.Client\SimpleEventMonitor.Web.csproj">
       <Project>{23B05BC4-4181-4B2E-A2BE-67C71E5BC435}</Project>
-      <Name>SimpleEventMonitor.Client</Name>
+      <Name>SimpleEventMonitor.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleEventMonitor.Core\SimpleEventMonitor.Core.csproj">
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
