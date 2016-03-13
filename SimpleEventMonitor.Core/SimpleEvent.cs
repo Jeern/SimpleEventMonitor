@@ -17,11 +17,6 @@ namespace SimpleEventMonitor.Core
         public object SystemEvent { get; set; }
         public string Content => JsonConvert.SerializeObject(SystemEvent);
 
-        public SimpleEvent()
-        {
-            //For serialization
-        }
-
         public SimpleEvent(object systemEvent)
         {
             SystemEvent = systemEvent;
