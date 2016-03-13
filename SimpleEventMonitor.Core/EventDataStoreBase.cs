@@ -43,7 +43,13 @@ namespace SimpleEventMonitor.Core
             }
         }
 
-        public void Persist(object evt)
+        public void Publish(object evt)
+        {
+            var simpleEvent = new SimpleEvent(evt);
+            PublishViaSignalR(simpleEvent);
+        }
+
+        public void PersistAndPublish(object evt)
         {
             var simpleEvent = new SimpleEvent(evt);
             Persist(simpleEvent);

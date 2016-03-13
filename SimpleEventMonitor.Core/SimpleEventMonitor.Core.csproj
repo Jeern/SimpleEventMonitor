@@ -75,6 +75,7 @@
     <Compile Include="..\CommonItems\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="PublishOnlyEventDataStore.cs" />
     <Compile Include="SignalRHub.cs" />
     <Compile Include="IEventDataStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
