@@ -50,9 +50,11 @@ namespace SimpleEventMonitor.Core
             PublishViaSignalR(simpleEvent);
         }
 
+        public abstract int TotalCount { get; }
+
         protected abstract void Persist(SimpleEvent evt);
 
-        public abstract IEnumerable<SimpleEvent> GetEvents();
+        public abstract IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue);
 
         private void PublishViaSignalR(SimpleEvent evt)
         {

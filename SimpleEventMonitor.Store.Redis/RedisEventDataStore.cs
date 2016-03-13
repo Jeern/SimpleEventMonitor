@@ -11,15 +11,17 @@ namespace SimpleEventMonitor.Store.Redis
             
         }
 
-        protected override void Persist(SimpleEvent evt)
+        public override IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue)
         {
+            yield return new SimpleEvent(new SomeEvent());
+            yield return new SimpleEvent(new SomeEvent());
+            yield return new SimpleEvent(new SomeEvent());
         }
 
-        public override IEnumerable<SimpleEvent> GetEvents()
+        public override int TotalCount => 0;
+
+        protected override void Persist(SimpleEvent evt)
         {
-            yield return new SimpleEvent(new SomeEvent());
-            yield return new SimpleEvent(new SomeEvent());
-            yield return new SimpleEvent(new SomeEvent());
         }
     }
 
