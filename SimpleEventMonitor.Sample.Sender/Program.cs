@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Threading;
-using Microsoft.AspNet.SignalR.Client;
 using SimpleEventMonitor.Store.Redis;
 
-namespace SimpleEventMonitor.SampleSender
+namespace SimpleEventMonitor.Sample.Sender
 {
     class Program
     {
@@ -12,10 +11,12 @@ namespace SimpleEventMonitor.SampleSender
             Console.WriteLine("Sending events...");
             var rnd = new Random();
 
+            var redisEventDataStore = new RedisEventDataStore();
+
             while (true)
             {
                 Thread.Sleep(rnd.Next(0, 10000));
-                RedisEventDataStore.Current.Persist(new SomeEvent());
+                redisEventDataStore.Persist(new SomeEvent());
             }
         }
     }

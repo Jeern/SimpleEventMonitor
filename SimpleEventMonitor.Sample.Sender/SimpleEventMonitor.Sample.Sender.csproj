@@ -7,8 +7,8 @@
     <ProjectGuid>{8D9E9A43-3DB2-4052-BFDF-E70EE47F2F1F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleEventMonitor.SampleSender</RootNamespace>
-    <AssemblyName>SimpleEventMonitor.SampleSender</AssemblyName>
+    <RootNamespace>SimpleEventMonitor.Sample.Sender</RootNamespace>
+    <AssemblyName>SimpleEventMonitor.Sample.Sender</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
