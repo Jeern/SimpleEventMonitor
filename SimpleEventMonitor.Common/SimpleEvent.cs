@@ -5,12 +5,13 @@ namespace SimpleEventMonitor.Common
 {
     public class SimpleEvent
     {
-        public string Name => SystemEvent.GetType().Name;
-        public string FullName => SystemEvent.GetType().FullName;
+        public string Name { get; set; }
+        public string FullName { get; set; }
 
         public DateTime LocalTime => UtcTime.ToLocalTime();
 
-        public string FormattedLocalTime => $"{LocalTime.ToLongDateString()} {LocalTime.ToLongTimeString()}.{LocalTime.ToString("fff")}";
+        public string FormattedLocalTime
+            => $"{LocalTime.ToLongDateString()} {LocalTime.ToLongTimeString()}.{LocalTime.ToString("fff")}";
 
         public DateTime UtcTime { get; set; }
         public object SystemEvent { get; set; }
@@ -25,6 +26,9 @@ namespace SimpleEventMonitor.Common
         {
             SystemEvent = systemEvent;
             UtcTime = DateTime.UtcNow;
+            var type = systemEvent.GetType();
+            Name = type.Name;
+            FullName = type.FullName;
         }
     }
 }
