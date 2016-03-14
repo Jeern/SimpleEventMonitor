@@ -20,5 +20,12 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>Event Monitor Log</tags>
+    <dependencies>
+      <dependency id="ServiceStack" version="[3.9.71]" />
+      <dependency id="ServiceStack.Common" version="[3.9.71]" />
+      <dependency id="ServiceStack.OrmLite.SqlServer" version="[3.9.71]" />
+      <dependency id="ServiceStack.Redis" version="[3.9.71]" />
+      <dependency id="ServiceStack.Text" version="[3.9.71]" />
+    </dependencies>  
   </metadata>
 </package>
