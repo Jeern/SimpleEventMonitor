@@ -3,7 +3,7 @@ using SimpleEventMonitor.Core;
 using SimpleEventMonitor.Web;
 using SimpleEventMonitor.Store.Redis;
 
-namespace SimpleEventMonitor.Sample
+namespace $rootnamespace$
 {
     public class Startup
     {

@@ -151,7 +151,7 @@
     <Content Include="..\SimpleEventMonitor.Sample\Table.html">
       <Link>Table.html</Link>
     </Content>
-    <Content Include="Startup.cs" />
+    <None Include="Startup.cs.pp" />
     <Compile Include="StartupExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
