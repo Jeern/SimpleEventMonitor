@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>SimpleEventMonitor List</title>
+    <title>SimpleEventMonitor Table</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -11,8 +11,20 @@
 <body>
     <h1>Simple Event Monitor</h1>
 
-    <ul id="sem-list" class="list-group">
-    </ul>
+<ul id="SEMLIST" class="list-group">
+</ul>
+
+    <table id="sem-table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>EventTime</th>
+                <th>Name</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody id="sem-table-body">
+        </tbody>
+    </table>
     <script type="text/javascript">
         $(function () {
             setupSignalR();
@@ -21,20 +33,20 @@
             }).then(function (data) {
                 var len = data.length;
                 for (var i = 0; i < len; i++) {
-                    addListItem(data[i]);
+                    addTableRow(data[i]);
                 }
             });
 
-            function addListItem(data) {
-                var listitem = '<li class="list-group-item"><div class="sem-eventname"><b>Name:</b> ' + data.Name + '</div><div class="sem-eventtime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="sem-eventcontent"><b>Content:</b> ' + data.Content + '</div></li>';
-                $("#sem-list").prepend(listitem);
+            function addTableRow(data) {
+                var rowItem = '<tr class="sem-table-row"><td "sem-table-item">' + data.FormattedLocalTime + '</td><td "sem-table-item">' + data.Name + '</td><td "sem-table-item">' + data.Content + '</td></tr>';
+                $("#sem-table-body").prepend(rowItem);
             }
 
             function setupSignalR() {
                 var connection = $.hubConnection('/signalr');
                 var eventHubProxy = connection.createHubProxy('eventHub');
                 eventHubProxy.on('publish', function (data) {
-                    addListItem(data);
+                    addTableRow(data);
                 });
                 connection.start().done(function () {
                     eventHubProxy.invoke('subscribe', 'simpleEventMonitorEvents');

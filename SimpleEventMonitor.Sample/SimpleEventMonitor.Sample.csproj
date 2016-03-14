@@ -110,6 +110,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Table.html" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
