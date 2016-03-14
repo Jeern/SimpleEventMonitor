@@ -26,6 +26,6 @@
       <dependency id="ServiceStack.OrmLite.SqlServer" version="[3.9.71]" />
       <dependency id="ServiceStack.Redis" version="[3.9.71]" />
       <dependency id="ServiceStack.Text" version="[3.9.71]" />
-    </dependencies>  
+    </dependencies>
   </metadata>
 </package>
