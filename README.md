@@ -79,18 +79,6 @@ Just
 and inherit the abstract class EventDataStoreBase. Look in the code for RedisEventDataStore for inspiration.
 
 
-## Missing features / known issues
-
-This is only a beta for now - there is  currently some stuff that needs to be looked into:
-
-1. Needs to Check if SignalR Connection needs to be stopped
-1. Add functionality to Clear events from the store
-1. Check if the insertion into Redis is optimal in relation to the Linq ordering of events
-1. Paging is needed - e.g. 20 events pr. page
-1. Update-Package with respect to Config transformations does not work correctly
-
-
-
 
 
 
