@@ -48,6 +48,37 @@ You might have noticed the "YourAppName". It is a suffix for the Key used in red
 
 You can also choose to differentiate the apps by using different Redis databases. The constructor has an overload that takes the redis database as input.
 
+## Redis as Backplane
+
+As mentioned the SimpleEventMonitor uses SignalR to send events from the publishers to the monitor. If you have several servers you need a Backplane. For this there is an Extension method which you call in the Startup.cs code:
+
+``` csharp 
+        public void Configuration(IAppBuilder app)
+        {
+            app.ConfigureMonitor(new RedisEventDataStore("Web11", "localhost", 6379))
+                .UseRedisBackplane("localhost", 6379);
+        }
+```
+
+## Custom EventStore
+
+If you need your events persisted, but do not want to use Redis for this. You can easily implement your own Storage.
+
+Just Install-Package SimpleEventMonitor.Core and inherit the abstract class EventDataStoreBase. Look in the code for RedisEventDataStore for inspiration.
+
+
+## Missing features / known issues
+
+This is only a beta for now - there is  currently some stuff that needs to be looked into:
+
+1. Needs to Check if SignalR Connection needs to be stopped
+1. Add functionality to Clear events from the store
+1. Check if the insertion into Redis is optimal in relation to the Linq ordering of events
+1. Paging is needed - e.g. 20 events pr. page
+
+
+
+
 
 
 
