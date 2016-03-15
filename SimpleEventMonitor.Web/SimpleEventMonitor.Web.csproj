@@ -161,10 +161,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="package.builder.json" />
     <None Include="packages.config" />
     <None Include="SimpleEventMonitor.Web.nuspec" />
+    <Content Include="Web.config.install.xdt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets" Condition="Exists('..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets')" />
