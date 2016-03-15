@@ -1,3 +1,5 @@
+FYI: The Nuget Packages for SimpleEventMonitor are slow to install. Probably too many dependencies. For now have patience when installing.
+
 # SimpleEventMonitor
 
 A simple event monitor for .NET that monitors events from any .NET system using SignalR
