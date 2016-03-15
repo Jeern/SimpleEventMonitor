@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package >
+	<!--
+	Any nuget reference you add will be included in the nuget package as a dependency without you
+	having to add it in here.
+	
+	For more info on how to compose a nuspec file see http://docs.nuget.org/create/nuspec-reference 
+	-->
+
+	<metadata>
+		<!-- This will use the AssemblyName -->
+		<id>$id$</id>
+		<!-- This will use the AssemblyVersion -->
+		<version>$version$</version>
+    <title>SimpleEventMonitor</title>
+    <description>SimpleEventMonitor.Web: This Package should be added to an Empty ASP.NET site which will then be configured to be the monitor site</description>
+    <authors>Jesper Niedermann</authors>
+    <owners>Jesper Niedermann</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Event Monitor Log</tags>
+    <dependencies>
+      <dependency id="ServiceStack" version="[3.9.71]" />
+      <dependency id="ServiceStack.Common" version="[3.9.71]" />
+      <dependency id="ServiceStack.OrmLite.SqlServer" version="[3.9.71]" />
+      <dependency id="ServiceStack.Redis" version="[3.9.71]" />
+      <dependency id="ServiceStack.Text" version="[3.9.71]" />
+      <dependency id="Newtonsoft.Json" version="8.0.2" />
+    </dependencies>
+  </metadata>
+</package>

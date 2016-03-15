@@ -1,15 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>SimpleEventMonitor.Sample</title>
-    <meta charset="utf-8" />
+    <title>SimpleEventMonitor List</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js"></script>
 </head>
 <body>
     <h1>Simple Event Monitor</h1>
 
-    <ul id="SEMLIST">
+    <ul id="sem-list" class="list-group">
     </ul>
     <script type="text/javascript">
         $(function () {
@@ -24,8 +26,8 @@
             });
 
             function addListItem(data) {
-                var listitem = '<li class="SEMEventListItem"><div class="SEMEventName"><b>Name:</b> ' + data.Name + '</div><div class="SEMEventTime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="SEMEventContent"><b>Content:</b> ' + data.Content + '</div></li>';
-                $("#SEMLIST").prepend(listitem);
+                var listitem = '<li class="list-group-item"><div class="sem-eventname"><b>Name:</b> ' + data.Name + '</div><div class="sem-eventtime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="sem-eventcontent"><b>Content:</b> ' + data.Content + '</div></li>';
+                $("#sem-list").prepend(listitem);
             }
 
             function setupSignalR() {

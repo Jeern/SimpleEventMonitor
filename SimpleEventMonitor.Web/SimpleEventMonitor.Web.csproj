@@ -11,6 +11,8 @@
     <AssemblyName>SimpleEventMonitor.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -143,6 +145,13 @@
     <Compile Include="GetEventsRequest.cs" />
     <Compile Include="GetEventsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="..\SimpleEventMonitor.Sample\Index.html">
+      <Link>Index.html</Link>
+    </Content>
+    <Content Include="..\SimpleEventMonitor.Sample\Table.html">
+      <Link>Table.html</Link>
+    </Content>
+    <Content Include="Startup.cs.pp" />
     <Compile Include="StartupExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,16 +159,20 @@
       <Project>{6d5244ce-8059-420f-a720-669fc997a455}</Project>
       <Name>SimpleEventMonitor.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SimpleEventMonitor.Store.Redis\SimpleEventMonitor.Store.Redis.csproj">
-      <Project>{f4997918-c1d7-4217-a33f-cfaa273f8b6c}</Project>
-      <Name>SimpleEventMonitor.Store.Redis</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="package.builder.json" />
     <None Include="packages.config" />
+    <None Include="SimpleEventMonitor.Web.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets" Condition="Exists('..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.Package.Builder.1.0.9\build\NuGet.Package.Builder.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
