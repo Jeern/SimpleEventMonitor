@@ -62,8 +62,6 @@
     <None Include="package.builder.json" />
     <None Include="packages.config" />
     <None Include="SimpleEventMonitor.Store.Redis.nuspec" />
-    <Content Include="Web.config.install.xdt" />
-    <Content Include="app.config.install.xdt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleEventMonitor.Core\SimpleEventMonitor.Core.csproj">
