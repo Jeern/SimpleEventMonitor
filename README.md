@@ -13,7 +13,7 @@ A simple event monitor for .NET that monitors events from any .NET system using 
 	1. Install-Package SimpleEventMonitor.Core in the project
 	1. Open the Web.config or app.config which applies to the project and change the value of the appSetting SEM:HubBaseUrl to your Monitor projects baseUrl e.g. http://localhost:52317 (again remember to change it if deploying to a server)
 	1. Create a PublishOnlyEventDataStore (can be a singleton) and call Publish on it where ever you need to publish events use arbitrary event objects as input
-1. Start the monitor and the app(s) that need to be monitored. And watch the events flow in.	
+1. Start the monitor and the app(s) that need to be monitored. And watch the events flow in. You can watch them using the standard index.html page or in table format using table.html	
 
 ``` csharp 
             var publisher = new PublishOnlyEventDataStore();
