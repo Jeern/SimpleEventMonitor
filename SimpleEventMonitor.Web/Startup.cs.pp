@@ -8,7 +8,7 @@ namespace $rootnamespace$
     {
         public void Configuration(IAppBuilder app)
         {
-            app.ConfigureMonitor(new PublishOnlyEventDataStore("http://localhost:2419"));
+            app.ConfigureMonitor(new PublishOnlyEventDataStore());
         }
     }
 }

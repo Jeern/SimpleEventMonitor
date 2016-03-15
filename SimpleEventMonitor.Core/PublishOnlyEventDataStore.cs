@@ -5,7 +5,7 @@ namespace SimpleEventMonitor.Core
 {
     public class PublishOnlyEventDataStore : EventDataStoreBase
     {
-        public PublishOnlyEventDataStore(string hubBaseUrl) : base(hubBaseUrl)
+        public PublishOnlyEventDataStore() : base(SemConfiguration.HubBaseUrl)
         {
             
         }

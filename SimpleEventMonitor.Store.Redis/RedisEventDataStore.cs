@@ -7,7 +7,7 @@ namespace SimpleEventMonitor.Store.Redis
 {
     public class RedisEventDataStore : EventDataStoreBase
     {
-        public RedisEventDataStore(string hubBaseUrl, string redisHost, int redisPort, int database = 0, string redisPassword = "") : base(hubBaseUrl)
+        public RedisEventDataStore(string redisHost, int redisPort, int database = 0, string redisPassword = "") : base(SemConfiguration.HubBaseUrl)
         {
             RedisDB.Initialize(redisHost, redisPort, database, redisPassword);
         }
