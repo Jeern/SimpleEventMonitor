@@ -23,7 +23,7 @@
     </table>
     <script type="text/javascript">
         $(function () {
-            setupSignalR();
+            setupSignalR(addTableRow);
             $.ajax({
                 url: "/Events"
             }).then(function (data) {
@@ -38,16 +38,6 @@
                 $("#sem-table-body").prepend(rowItem);
             }
 
-            function setupSignalR() {
-                var connection = $.hubConnection('/signalr');
-                var eventHubProxy = connection.createHubProxy('eventHub');
-                eventHubProxy.on('publish', function (data) {
-                    addTableRow(data);
-                });
-                connection.start().done(function () {
-                    eventHubProxy.invoke('subscribe', 'simpleEventMonitorEvents');
-                });
-            }
         });
     </script>
 

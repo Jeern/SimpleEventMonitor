@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.html" />
+    <Content Include="Scripts\simpleEventMonitor.js" />
     <Content Include="Table.html" />
     <Content Include="packages.config" />
   </ItemGroup>
