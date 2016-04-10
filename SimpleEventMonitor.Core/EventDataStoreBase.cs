@@ -56,7 +56,7 @@ namespace SimpleEventMonitor.Core
             PublishViaSignalR(simpleEvent);
         }
 
-        public abstract int TotalCount { get; }
+        public abstract long TotalCount { get; }
 
         protected abstract void Persist(SimpleEvent evt);
 

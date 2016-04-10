@@ -11,6 +11,6 @@ namespace SimpleEventMonitor.Core
         /// <summary>
         /// For paging when I get around to it
         /// </summary>
-        int TotalCount { get; }
+        long TotalCount { get; }
     }
 }

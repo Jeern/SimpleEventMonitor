@@ -30,7 +30,7 @@ namespace SimpleEventMonitor.Store.Redis
             return redisValues.Select(redisValue => JsonConvert.DeserializeObject<SimpleEvent>(redisValue));
         }
 
-        public override int TotalCount => 0;
+        public override long TotalCount => RedisDB.Database.ListLength(Key);
 
         protected override void Persist(SimpleEvent evt)
         {

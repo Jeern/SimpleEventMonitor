@@ -9,7 +9,7 @@ namespace SimpleEventMonitor.Core
         {
             
         }
-        public override int TotalCount => 0;
+        public override long TotalCount => 0;
 
         public override IEnumerable<SimpleEvent> GetEvents(int startIdx = 0, int endIdx = int.MaxValue)
         {
