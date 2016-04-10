@@ -23,7 +23,7 @@
     </table>
     <script type="text/javascript">
         $(function () {
-            setupSignalR(addTableRow);
+            SEM.setupSignalR(addTableRow);
             $.ajax({
                 url: "/Events"
             }).then(function (data) {

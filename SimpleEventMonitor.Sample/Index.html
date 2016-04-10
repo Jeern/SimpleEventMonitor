@@ -21,9 +21,9 @@
     </ul>
     <script type="text/javascript">
         $(function () {
-            setupSignalR(addListItem);
+            SEM.setupSignalR(addListItem);
             $.ajax({
-                url: "/Events"
+                url: "/Events?StartIdx=0&EndIdx=9"
             }).then(function (data) {
                 var len = data.length;
                 for (var i = 0; i < len; i++) {
