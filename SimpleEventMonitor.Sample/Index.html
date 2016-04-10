@@ -22,14 +22,7 @@
     <script type="text/javascript">
         $(function () {
             SEM.setupSignalR(addListItem);
-            $.ajax({
-                url: "/Events?StartIdx=0&EndIdx=9"
-            }).then(function (data) {
-                var len = data.length;
-                for (var i = 0; i < len; i++) {
-                    addListItem(data[i]);
-                }
-            });
+            SEM.getInitialData(addListItem, SEM.getEvents, SEM.state);
 
             function addListItem(data) {
                 var listitem = '<li class="list-group-item"><div class="sem-eventname"><b>Name:</b> ' + data.Name + '</div><div class="sem-eventtime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="sem-eventcontent"><b>Content:</b> ' + data.Content + '</div></li>';
