@@ -25,7 +25,11 @@
     <script type="text/javascript">
         $(function () {
             SEM.setupSignalR(addTableRow);
-            SEM.getInitialData(addTableRow, SEM.getEvents, SEM.state);
+            SEM.getInitialData(clearView, addTableRow, SEM.getEvents, SEM.showEvents, SEM.state);
+
+            function clearView() {
+                $("#sem-table").empty();
+            }
 
             function addTableRow(data) {
                 var rowItem = '<tr class="sem-table-row"><td "sem-table-item">' + data.FormattedLocalTime + '</td><td "sem-table-item">' + data.Name + '</td><td "sem-table-item">' + data.Content + '</td></tr>';

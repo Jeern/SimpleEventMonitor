@@ -22,7 +22,11 @@
     <script type="text/javascript">
         $(function () {
             SEM.setupSignalR(addListItem);
-            SEM.getInitialData(addListItem, SEM.getEvents, SEM.state);
+            SEM.getInitialData(clearView, addListItem, SEM.getEvents, SEM.showEvents, SEM.state);
+
+            function clearView() {
+                $("#sem-list").empty();
+            }
 
             function addListItem(data) {
                 var listitem = '<li class="list-group-item"><div class="sem-eventname"><b>Name:</b> ' + data.Name + '</div><div class="sem-eventtime"><b>EventTime:</b> ' + data.FormattedLocalTime + '</div><div class="sem-eventcontent"><b>Content:</b> ' + data.Content + '</div></li>';

@@ -15,32 +15,42 @@
         pageSize: 10,
         totalCount: 0,
         minIdxShown: 0,
-        maxIdxShown: 0,
         items: []
     },
 
-    getInitialData: function (dataAdder, eventGetter, stateData) {
+    getInitialData: function (clearView, dataAdder, eventGetter, eventShower, stateData) {
         //First get TotalCount. Then decide what to do next
         $.ajax({
             url: "/TotalCount"
         }).then(function (data) {
             stateData.totalCount = data;
-            eventGetter(dataAdder);
+            if (stateData.totalCount > 0) {
+                eventGetter(dataAdder, stateData, 0);
+            }
         });
     },
 
-    getEvents: function (dataAdder) {
+    getEvents: function (clearView, dataAdder, eventShower, stateData, from) {
         $.ajax({
-            url: "/Events?StartIdx=0&EndIdx=9"
+            url: "/Events?StartIdx=" + from + "&EndIdx=" + from + stateData.pageSize - 1
         }).then(function (data) {
             var len = data.length;
             for (var i = 0; i < len; i++) {
-                dataAdder(data[i]);
+                stateData.items.push(data[i]);
             }
+            eventShower(clearView, dataAdder, stateData);
         });
+    },
 
+    showEvents: function (clearView, dataAdder, stateData) {
 
+        clearView();
+        var len = stateData.length;
+        for (var i = 0; i < len; i++) {
+            dataAdder(stateData.items[i]);
+        };
     }
+
 }
 
 
